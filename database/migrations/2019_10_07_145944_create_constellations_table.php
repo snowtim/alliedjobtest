@@ -16,13 +16,16 @@ class CreateConstellationsTable extends Migration
         Schema::create('constellations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->date('today_date');
             $table->string('constellation_name');
-            $table->string('fortune_score');
-            $table->string('fortune_description');
+            $table->string('all_score');
+            $table->string('all_description');
             $table->string('love_score');
             $table->string('love_description');
             $table->string('work_score');
             $table->string('work_description');
+            $table->string('fortune_score');
+            $table->string('fortune_description');
         });
     }
 

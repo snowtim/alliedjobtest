@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+//use Illuminate\Support\Facades\DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+//use APP\Http\Controllers\ConstellationController;
 
 class Kernel extends ConsoleKernel
 {
@@ -14,6 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        \App\Console\Commands\TestLog::class
     ];
 
     /**
@@ -26,6 +29,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+         //$schedule->call(update())->command('test:Log')->everyMinute();
+        $schedule->command('test:Log')
+                 ->everyMinute();
     }
 
     /**
