@@ -16,7 +16,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
-        \App\Console\Commands\TestLog::class
+        //Commands\TestLog::class,
+        Commands\ConstellationUpdate::class,
     ];
 
     /**
@@ -30,8 +31,10 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
          //$schedule->call(update())->command('test:Log')->everyMinute();
-        $schedule->command('test:Log')
-                 ->everyMinute();
+
+        //$schedule->command('test:Log')->everyMinute();
+        $schedule->command('update:renew')->hourly();
+        
     }
 
     /**
