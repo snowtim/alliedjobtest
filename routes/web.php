@@ -22,4 +22,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Constellations
 Route::get('/constellations', 'ConstellationController@index');
 Route::get('/constellations/store', 'ConstellationController@store');
-//Route::patch('/constellations', 'ConstellationController@update');
