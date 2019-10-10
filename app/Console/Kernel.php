@@ -2,10 +2,8 @@
 
 namespace App\Console;
 
-//use Illuminate\Support\Facades\DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-//use APP\Http\Controllers\ConstellationController;
 
 class Kernel extends ConsoleKernel
 {

@@ -52,7 +52,8 @@ class ConstellationUpdate extends Command
             preg_match_all('/<span class="txt_pink">(.*?)：<\/span>/', $htmlresult, $l_score);
             preg_match_all('/<span class="txt_blue">(.*?)：<\/span>/', $htmlresult, $w_score);
             preg_match_all('/<span class="txt_orange">(.*?)：<\/span>/', $htmlresult, $f_score);
-            Constellation::where('today_date', '=', date("Y-m-d"))->update([
+
+            Constellation::where('constellation_name', '=', $name[1][0])->update([
                 'today_date' => date("Y-m-d"),
                 'constellation_name' => $name[1][0],
                 'all_score' => $a_score[1][0],
