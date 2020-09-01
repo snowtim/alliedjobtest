@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
         //          ->hourly();
         //$schedule->command('test:Log')->everyMinute();
         $schedule->command('update:renew')->hourly();
-        
+
     }
 
     /**
