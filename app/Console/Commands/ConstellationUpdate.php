@@ -45,7 +45,10 @@ class ConstellationUpdate extends Command
         for($i=0; $i<12; $i++) {
             curl_setopt($curl, CURLOPT_URL, $c_url->constellations_url[$i]);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+
             $htmlresult = curl_exec($curl);
+            
             preg_match_all('/<h3>今日(.*?)解析<\/h3>\\r\\n/', $htmlresult, $name);
             preg_match_all('!<span class="txt_green">(.*?)：<\/span>!', $htmlresult, $a_score);
             preg_match_all("!：<\/span><\/p><p>(.*?)<\/p>\\r\\n!", $htmlresult, $description);
